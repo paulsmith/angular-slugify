@@ -56,7 +56,8 @@ The `slug` directive is a way to declaratively say one model is the
 slugification of another.
 
 ```html
-<slug from="title" to="slug">My slug is {{slug}}</slug>
+<slug from="post.title" to="post.slug">My slug is {{post.slug}}</slug>
+<p>It also works out here: {{post.slug}}</p>
 ```
 
 The `from` attribute is the name of the model in the current scope you want to
