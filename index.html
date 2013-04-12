@@ -16,7 +16,7 @@
             <div class="span4" ng-controller="ServiceDemoCtrl">
                 <h2>Service</h2>
                 <form ng-submit="update(title)">
-                    <input type="text" ng-model="title">
+                    <input type="text" ng-model="title" class="input-xlarge">
                     <div>
                         <button class="btn">Update</button>
                     </div>
@@ -25,12 +25,12 @@
             </div>
             <div class="span4" ng-controller="FilterDemoCtrl">
                 <h2>Filter</h2>
-                <input type="text" ng-model="title">
+                <input type="text" ng-model="title" class="input-xlarge">
                 <p><tt>slug: {{title | slugify}}</tt></p>
             </div>
             <div class="span4" ng-controller="DirectiveDemoCtrl">
                 <h2>Directive</h2>
-                <input type="text" ng-model="title">
+                <input type="text" ng-model="title" class="input-xlarge">
                 <slug from="title" to="slug">
                     <tt>slug: {{slug}}</tt>
                 </slug>
@@ -47,14 +47,19 @@
     angular.module("demo", ["slugifier"]);
 
     function ServiceDemoCtrl($scope, Slug) {
+        $scope.title = "My First Title";
         $scope.update = function(title) {
             $scope.slug = Slug.slugify(title);
         };
     }
 
-    function FilterDemoCtrl($scope) {}
+    function FilterDemoCtrl($scope) {
+        $scope.title = "We the People of the United States";
+    }
 
-    function DirectiveDemoCtrl($scope) {}
+    function DirectiveDemoCtrl($scope) {
+        $scope.title = "When in the Course of Human Events";
+    }
 </script>
 </body>
 </html>
