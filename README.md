@@ -12,6 +12,10 @@ For example, “Man Bites Dog” might produce the slug `man-bites-dog` for the 
 
 `http://example.com/2013/04/man-bites-dog.html`
 
+## Demo
+
+[Click here for demo](http://paulsmith.github.io/angular-slugify/).
+
 ## Usage
 
 Include `angular-slugify.js` in your HTML document somewhere after you have set
