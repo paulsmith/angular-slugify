@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>angular-slugify demos</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="angular.min.js"></script>
+    <script src="angular-slugify.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>angular-slugify demos <small>View the source</small></h1>
+        </div>
+        <div class="row" ng-app="demo">
+            <div class="span4" ng-controller="ServiceDemoCtrl">
+                <h2>Service</h2>
+                <form ng-submit="update(title)">
+                    <input type="text" ng-model="title">
+                    <div>
+                        <button class="btn">Update</button>
+                    </div>
+                </form>
+                <p><tt>slug: {{slug}}</tt></p>
+            </div>
+            <div class="span4" ng-controller="FilterDemoCtrl">
+                <h2>Filter</h2>
+                <input type="text" ng-model="title">
+                <p><tt>slug: {{title | slugify}}</tt></p>
+            </div>
+            <div class="span4" ng-controller="DirectiveDemoCtrl">
+                <h2>Directive</h2>
+                <input type="text" ng-model="title">
+                <slug from="title" to="slug">
+                    <tt>slug: {{slug}}</tt>
+                </slug>
+            </div>
+        </div>
+        <hr>
+        <p>
+            <a class="btn btn-info" href="https://github.com/paulsmith/angular-slugify">
+                <i class="icon-arrow-left icon-white"></i> angular-slugify source code on GitHub
+            </a>
+        </p>
+    </div>
+<script>
+    angular.module("demo", ["slugifier"]);
+
+    function ServiceDemoCtrl($scope, Slug) {
+        $scope.update = function(title) {
+            console.log("update(): " + title);
+            $scope.slug = Slug.slugify(title);
+        };
+    }
+
+    function FilterDemoCtrl($scope) {}
+
+    function DirectiveDemoCtrl($scope) {}
+</script>
+</body>
+</html>
