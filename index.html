@@ -48,7 +48,6 @@
 
     function ServiceDemoCtrl($scope, Slug) {
         $scope.update = function(title) {
-            console.log("update(): " + title);
             $scope.slug = Slug.slugify(title);
         };
     }
