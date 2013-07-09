@@ -31,12 +31,22 @@
         var ascii = [];
         var c;
         for (var i = 0; i < s.length; i++) {
-            if ((c = s.charCodeAt(i)) < 0x80) {
+            if ((c = s.charCodeAt(i)) < 402) {
                 ascii.push(String.fromCharCode(c));
             }
         }
         s = ascii.join("");
-        s = s.replace(/[^\w\s-]/g, "").trim().toLowerCase();
+        s = s.replace(/[àáâãäå]/g, "a").
+            replace(/æ/g, "ae").
+            replace(/ç/g, "c").
+            replace(/[èéêë]/g, "e").
+            replace(/[ìíîï]/g, "i").
+            replace(/ñ/g, "n").
+            replace(/[òóôõö]/g, "o").
+            replace(/œ/g, "oe").
+            replace(/[ùúûü]/g, "u").
+            replace(/[ýÿ]/g, "y").
+            replace(/[^\w\s-]/g, "").trim().toLowerCase();
         return s.replace(/[-\s]+/g, "-");
     }
 
