@@ -1,0 +1,8 @@
+{
+  "name": "angular-slugify",
+  "version": "1.0",
+  "main": "./angular-slugify.js",
+  "dependencies": {
+    "angular": "1.0.7"
+  }
+}
