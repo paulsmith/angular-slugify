@@ -70,7 +70,10 @@ automatically updated with the slugification whenever `from` changes.
 
 ## Tests
 
-It has them.
+```bash
+$ npm -g install karma
+$ ./test/run-tests.sh
+```
 
 ## License
 
