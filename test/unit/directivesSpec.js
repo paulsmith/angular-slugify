@@ -6,7 +6,7 @@ describe("slugify-directive", function() {
     beforeEach(module("slugifier"));
 
     beforeEach(inject(function($rootScope, $compile) {
-        elm = angular.element('<slugify from="title" to="slug">slug: {{slug}}</slugify>');
+        elm = angular.element('<slug from="title" to="slug">slug: {{slug}}</slug>');
         scope = $rootScope;
         $compile(elm)(scope);
         scope.$digest();

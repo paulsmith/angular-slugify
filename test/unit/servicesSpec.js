@@ -4,10 +4,8 @@ var slugTestCases = [
     ["", ""]
     ,[" Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/",
       "jack-jill-like-numbers-123-and-4-and-silly-characters"]
-     // XXX: we can't make the following work properly until we can do Unicode
-     // normalization, until then just strip non-ascii chars bluntly
-    //,["Un éléphant à l'orée du bois", "un-elephant-a-loree-du-bois"]
-    ,["Un éléphant à l'orée du bois", "un-lphant-lore-du-bois"]
+    ,["Un éléphant à l'orée du bois", "un-elephant-a-loree-du-bois"]
+    ,["Iñtërnâtiônàlizætiøn", "internationalizaetion"]
 ];
 
 describe("slugify-service", function() {
