@@ -1,0 +1,11 @@
+#!/bin/sh
+# Control code ranges [0x7f..0x9f]
+for i in $(seq 160 384); do
+	hex=`printf '0x%04x\n' $i`
+	char=`perl -C -e "print chr $hex"`
+	trans=`echo "$char" | iconv -f utf8 -t ascii//TRANSLIT 2>/dev/null`
+	if [ $? -eq 0 ]; then
+		#printf "%3d\tU+%04x\t%s\t%s\n" "$i" "$hex" "$char" "$trans"
+		printf "\t'$char': \"$trans\",\n"
+	fi
+done
