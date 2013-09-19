@@ -291,9 +291,9 @@
         };
     }]);
 
-    mod.filter("slugify", function(Slug) {
+    mod.filter("slugify", ['Slug', function(Slug) {
         return function(input) {
             return Slug.slugify(input);
         };
-    });
+    }]);
 })();
