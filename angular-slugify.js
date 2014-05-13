@@ -21,9 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-"use strict";
 
 (function() {
+    "use strict";
+    
     var mod = angular.module("slugifier", []);
 
     // Unicode (non-control) characters in the Latin-1 Supplement and Latin
@@ -247,7 +248,73 @@
         'ż': "z",
         'Ž': "Z",
         'ž': "z",
-        'ſ': "s"
+        'ſ': "s",
+        'а': "a",
+        'б': "b",
+        'в': "v",
+        'г': "g",
+        'д': "d",
+        'е': "e",
+        'ё': "yo",
+        'ж': "zh",
+        'з': "z",
+        'и': "i",
+        'й': "yi",
+        'к': "k",
+        'л': "l",
+        'м': "m",
+        'н': "n",
+        'о': "o",
+        'п': "p",
+        'р': "r",
+        'с': "s",
+        'т': "t",
+        'у': "u",
+        'ф': "f",
+        'х': "kh",
+        'ц': "ts",
+        'ч': "ch",
+        'ш': "sh",
+        'щ': "sch",
+        'ь': "",
+        'ы': "y",
+        'ъ': "",
+        'э': "e",
+        'ю': "yu",
+        'я': "ya",
+        'А': "A",
+        'Б': "B",
+        'В': "V",
+        'Г': "G",
+        'Д': "D",
+        'Е': "E",
+        'Ё': "Yo",
+        'Ж': "Zh",
+        'З': "Z",
+        'И': "I",
+        'Й': "Yi",
+        'К': "K",
+        'Л': "L",
+        'М': "M",
+        'Н': "N",
+        'О': "O",
+        'П': "P",
+        'Р': "R",
+        'С': "S",
+        'Т': "T",
+        'У': "U",
+        'Ф': "F",
+        'Х': "Kh",
+        'Ц': "Ts",
+        'Ч': "Ch",
+        'Ш': "Sh",
+        'Щ': "Sch",
+        'Ь': "",
+        'Ы': "Y",
+        'Ъ': "",
+        'Э': "E",
+        'Ю': "Yu",
+        'Я': "Ya"
     };
 
     function _slugify(s) {
@@ -291,9 +358,9 @@
         };
     }]);
 
-    mod.filter("slugify", function(Slug) {
+    mod.filter("slugify", ['Slug', function(Slug) {
         return function(input) {
             return Slug.slugify(input);
         };
-    });
+    }]);
 })();
