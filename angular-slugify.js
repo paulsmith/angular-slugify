@@ -21,9 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-"use strict";
 
 (function() {
+    "use strict";
+    
     var mod = angular.module("slugifier", []);
 
     // Unicode (non-control) characters in the Latin-1 Supplement and Latin
