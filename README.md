@@ -3,6 +3,11 @@
 Provides “slugification” for AngularJS in the form of a service, filter, and
 a directive.
 
+## Why I forked it?
+
+I just forked to make a pull request to fix a bug "Unknown provider error" when the script is minified. But the author don't fixed.
+https://github.com/paulsmith/angular-slugify/pull/7
+
 ## What is a slug?
 
 A slug is that final portion of a URL which is derived from some other piece of
