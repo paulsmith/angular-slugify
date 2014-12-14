@@ -1,3 +1,4 @@
+***This is a fork that fixes some issues. It has its own bower package (wb-angular-slugify).***
 # angular-slugify
 
 Provides “slugification” for AngularJS in the form of a service, filter, and
@@ -44,9 +45,9 @@ input as argument and returns the slugified string.
 
 ```js
 function MyCtrl($scope, Slug) {
-    $scope.slugify = function(input) {
-        $scope.mySlug = Slug.slugify(input);
-    };
+  $scope.slugify = function(input) {
+    $scope.mySlug = Slug.slugify(input);
+  };
 }
 ```
 
