@@ -1,5 +1,5 @@
 {
-  "name": "wb-angular-slugify",
+  "name": "angular-slugify",
   "version": "1.0.1",
   "main": "src/angular-slugify.js",
   "dependencies": {
