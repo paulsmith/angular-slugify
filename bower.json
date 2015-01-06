@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "main": "./angular-slugify.js",
   "dependencies": {
-    "angular": "1.0.7"
+    "angular": "^1"
   }
 }
