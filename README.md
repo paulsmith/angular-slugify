@@ -16,14 +16,17 @@ For example, “Man Bites Dog” might produce the slug `man-bites-dog` for the 
 
 [Click here for demo](http://paulsmith.github.io/angular-slugify/).
 
+## Installation
+
+### Bower
+```bash
+$ bower install angular-slugify
+```
+
 ## Usage
 
 Include `angular-slugify.js` in your HTML document somewhere after you have set
 up AngularJS.
-
-```html
-<script src="angular-slugify.js">`
-```
 
 Make `slugifier` a dependency in your AngularJS app.
 
@@ -71,8 +74,11 @@ automatically updated with the slugification whenever `from` changes.
 ## Tests
 
 ```bash
-$ npm -g install karma
-$ ./test/run-tests.sh
+$ grunt test:dist
+$ grunt test:dev
+
+# Or test both
+$ grunt test
 ```
 
 ## License
