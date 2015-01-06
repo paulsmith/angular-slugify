@@ -6,11 +6,12 @@
   },
   "devDependencies": {
     "grunt": "^0.4.0",
-    "grunt-contrib-uglify": "^0.4.0",
     "grunt-banner": "^0.2.3",
+    "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.4.0",
     "grunt-karma": "^0.8.3",
-    "karma-jasmine": "^0.1.5",
-    "karma-chrome-launcher": "^0.1.4"
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5"
   }
 }

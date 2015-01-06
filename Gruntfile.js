@@ -3,8 +3,9 @@
 
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-banner');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-banner');
   grunt.loadNpmTasks('grunt-karma');
 
 
@@ -16,6 +17,9 @@ module.exports = function (grunt) {
           'bower_components/angular-mocks/angular-mocks.js',
           'test/unit/*Spec.js'
         ]
+      },
+      banner: {
+        delimiter: '\n *\t'
       }
     },
     uglify: {
@@ -25,14 +29,21 @@ module.exports = function (grunt) {
         }
       }
     },
+    copy: {
+      dist: {
+        files: {
+          'dist/angular-slugify.js': 'src/angular-slugify.js'
+        }
+      }
+    },
     usebanner: {
       dist: {
         options: {
           position: 'top',
-          banner: '/* \n' + grunt.file.read('COPYING') + '*/'
+          banner: '/*<%= meta.banner.delimiter %>' + grunt.file.read('COPYING').split('\n').join('<%= meta.banner.delimiter %>') + '\n*/\n'
         },
         files: {
-          src: ['dist/angular-slugify.min.js']
+          src: ['dist/**/*.js']
         }
       }
     },
@@ -51,9 +62,14 @@ module.exports = function (grunt) {
       options: {
         configFile: 'test/karma.conf.js'
       },
-      dist: {
+      distMin: {
         options: {
           files: ['<%= meta.karma.files %>', 'dist/angular-slugify.min.js']
+        }
+      },
+      dist: {
+        options: {
+          files: ['<%= meta.karma.files %>', 'dist/angular-slugify.js']
         }
       },
       dev: {
@@ -66,13 +82,16 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'jshint:dev',
+    'test:dev',
+    'copy:dist',
     'uglify',
     'usebanner',
-    'test:dist'
+    'test:dist',
+    'test:distMin'
   ]);
 
   grunt.registerTask('test', function (target) {
-    if( ['dist', 'dev'].indexOf(target) >= 0 ) {
+    if( ['distMin', 'dist', 'dev'].indexOf(target) >= 0 ) {
       grunt.task.run(['karma:' + target]);
     } else {
       grunt.task.run(['karma']);
