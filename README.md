@@ -22,7 +22,7 @@ Include `angular-slugify.js` in your HTML document somewhere after you have set
 up AngularJS.
 
 ```html
-<script src="angular-slugify.js">`
+<script src="angular-slugify.js">
 ```
 
 Make `slugifier` a dependency in your AngularJS app.
