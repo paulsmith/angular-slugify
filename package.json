@@ -1,7 +1,7 @@
 {
   "name": "angular-slugify",
   "version": "1.0.1",
-  "description": "Slugification",
+  "description": "Provides “slugification” for AngularJS in the form of a service, filter, and a directive.",
   "main": "angular-slugify.js",
   "directories": {
     "test": "test"
@@ -14,6 +14,7 @@
     "url": "https://github.com/paulsmith/angular-slugify.git"
   },
   "keywords": [
+    "slug",
     "slugs",
     "slugify"
   ],
