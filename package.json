@@ -7,7 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "bower install",
+    "pretest": "npm install",
+    "test": "node node_modules/.bin/karma start test/karma.conf.js",
+    "test-single-run": "node node_modules/.bin/karma start test/karma.conf.js --single-run"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,16 @@
   "bugs": {
     "url": "https://github.com/paulsmith/angular-slugify/issues"
   },
-  "homepage": "https://github.com/paulsmith/angular-slugify"
+  "homepage": "https://github.com/paulsmith/angular-slugify",
+  "dependencies": {
+    "angular": "^1.0.x"
+  },
+  "devDependencies": {
+    "karma": "^0.13.3",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "bower": "^1.4.1",
+    "angular": "^1.2.x",
+    "angular-mocks": "^1.2.x"
+  }
 }

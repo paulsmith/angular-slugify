@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "main": "./angular-slugify.js",
   "dependencies": {
-    "angular": ">=1.0.7"
+    "angular": "^1.0.x"
+  },
+  "devDependencies": {
+    "angular": "^1.2.x",
+    "angular-mocks": "^1.2.x"
   }
 }

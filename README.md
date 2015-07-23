@@ -71,8 +71,7 @@ automatically updated with the slugification whenever `from` changes.
 ## Tests
 
 ```bash
-$ npm -g install karma
-$ ./test/run-tests.sh
+$ npm test
 ```
 
 ## License
