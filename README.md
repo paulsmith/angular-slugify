@@ -19,7 +19,9 @@ For example, “Man Bites Dog” might produce the slug `man-bites-dog` for the 
 ## Usage
 
 Include `angular-slugify.js` in your HTML document somewhere after you have set
-up AngularJS.
+up AngularJS or can install it with npm
+
+`npm install angular-slugify` and add `require('angular-slugify');` to your bundle.
 
 ```html
 <script src="angular-slugify.js">
