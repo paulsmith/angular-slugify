@@ -12,8 +12,8 @@ var asciiTestCases = [
   ["", ""]
     ,[" Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/",
       " Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/"]
-    ,["Un éléphant à l'orée du bois", "Un 'el'ephant `a l'or'ee du bois"]
-    ,["Iñtërnâtiônàlizætiøn", "I~nt\"ern^ati^on`alizaetion"]
+    ,["Un éléphant à l'orée du bois", "Un elephant a l'oree du bois"]
+    ,["Iñtërnâtiônàlizætiøn", "Internationalizaetion"]
 ];
 
 
