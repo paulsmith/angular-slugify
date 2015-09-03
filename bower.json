@@ -1,5 +1,5 @@
 {
-  "name": "angular-slugify",
+  "name": "xp-angular-slugify",
   "version": "1.0.1",
   "main": "./angular-slugify.js",
   "dependencies": {
