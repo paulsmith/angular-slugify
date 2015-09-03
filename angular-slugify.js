@@ -253,6 +253,13 @@
 
     function _slugify(s) {
         if (!s) return "";
+        s = _toAscii(s);
+        s = s.replace(/[^\w\s-]/g, "").trim().toLowerCase();
+        return s.replace(/[-\s]+/g, "-");
+    }
+
+    function _toAscii(s) {
+        if (!s) return "";
         var ascii = [];
         var ch, cp;
         for (var i = 0; i < s.length; i++) {
@@ -261,13 +268,12 @@
                 ascii.push(charmap[ch] || ch);
             }
         }
-        s = ascii.join("");
-        s = s.replace(/[^\w\s-]/g, "").trim().toLowerCase();
-        return s.replace(/[-\s]+/g, "-");
+        return ascii.join("");
     }
 
     mod.factory("Slug", function() {
         return {
+            toAscii: _toAscii,
             slugify: _slugify
         };
     });

@@ -8,17 +8,35 @@ var slugTestCases = [
     ,["Iñtërnâtiônàlizætiøn", "internationalizaetion"]
 ];
 
+var asciiTestCases = [
+  ["", ""]
+    ,[" Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/",
+      " Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/"]
+    ,["Un éléphant à l'orée du bois", "Un 'el'ephant `a l'or'ee du bois"]
+    ,["Iñtërnâtiônàlizætiøn", "I~nt\"ern^ati^on`alizaetion"]
+];
+
+
+var runTestCases = function(testCasess, fn) {
+    var input, expected;
+    for (var i = 0; i < testCasess.length; i++) {
+        input = testCasess[i][0];
+        expected = testCasess[i][1];
+        expect(fn(input)).toEqual(expected);
+    }
+}
+
 describe("slugify-service", function() {
     beforeEach(module("slugifier"));
 
     describe("slugify", function() {
         it("should produce a correct slug from string input", inject(function(Slug) {
-            var input, expected;
-            for (var i = 0; i < slugTestCases.length; i++) {
-                input = slugTestCases[i][0];
-                expected = slugTestCases[i][1];
-                expect(Slug.slugify(input)).toEqual(expected);
-            }
+            runTestCases(slugTestCases, Slug.slugify);
+        }));
+    });
+    describe("toAscii", function() {
+        it("should produce a correct ascii only from string input", inject(function(Slug) {
+            runTestCases(asciiTestCases, Slug.toAscii);
         }));
     });
 });
