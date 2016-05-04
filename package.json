@@ -7,7 +7,6 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "bower install",
     "pretest": "npm install",
     "test": "node node_modules/.bin/karma start test/karma.conf.js",
     "test-single-run": "node node_modules/.bin/karma start test/karma.conf.js --single-run"
