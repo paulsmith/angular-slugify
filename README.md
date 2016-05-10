@@ -68,6 +68,17 @@ The `from` attribute is the name of the model in the current scope you want to
 slugify. The `to` attribute is the name of the model you want to be
 automatically updated with the slugification whenever `from` changes.
 
+## Configuration
+
+The `SlugProvider` provider enables you to override mappings.
+
+```js
+angular.module("myApp")
+    .config(function(SlugProvider) {
+        SlugProvider.charmap['å'] = 'aa'; // default: 'a'
+    });
+```
+
 ## Tests
 
 ```bash
