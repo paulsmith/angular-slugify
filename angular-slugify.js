@@ -30,6 +30,7 @@
     // Unicode (non-control) characters in the Latin-1 Supplement and Latin
     // Extended-A blocks, transliterated into ASCII characters.
     var charmap = {
+        '/': " ",
         ' ': " ",
         '¡': "!",
         '¢': "c",
