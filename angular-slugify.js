@@ -263,7 +263,7 @@
             }
         }
         s = ascii.join("");
-        s = s.replace(/[^\w\s-/]/g, "").trim().toLowerCase();
+        s = s.replace(/[^\w\s-]/g, "").trim().toLowerCase();
         return s.replace(/[-\s]+/g, "-");
     }
 
