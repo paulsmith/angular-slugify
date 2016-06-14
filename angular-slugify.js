@@ -30,6 +30,7 @@
     // Unicode (non-control) characters in the Latin-1 Supplement and Latin
     // Extended-A blocks, transliterated into ASCII characters.
     var charmap = {
+        '/': " ",
         ' ': " ",
         '¡': "!",
         '¢': "c",
@@ -262,7 +263,7 @@
             }
         }
         s = ascii.join("");
-        s = s.replace(/[^\w\s-]/g, "").trim().toLowerCase();
+        s = s.replace(/[^\w\s-/]/g, "").trim().toLowerCase();
         return s.replace(/[-\s]+/g, "-");
     }
 
